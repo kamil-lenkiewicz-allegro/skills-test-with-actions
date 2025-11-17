@@ -25,6 +25,8 @@ _Great job adding the templated workflow! :tada:_
 
 Adding that file to this branch is enough for GitHub Actions to begin running CI on your repository.
 
+Test.
+
 When a GitHub Actions workflow is running, you should see some checks in progress, like the screenshot below.
 
 <img alt="checks in progress in a merge box" src=https://user-images.githubusercontent.com/16547949/66080348-ecc5f580-e533-11e9-909e-c213b08790eb.png width=400 />
