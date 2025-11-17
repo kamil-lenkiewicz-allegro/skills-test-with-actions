@@ -13,12 +13,10 @@ _Create workflows that enable you to use Continuous Integration (CI) for your pr
 
 </header>
 
-<!--
   <<< Author notes: Step 2 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
-
 ## Step 2: Fix the test
 
 _Great job adding the templated workflow! :tada:_
@@ -50,6 +48,8 @@ If the checks don't appear or if the checks are stuck in progress, there's a few
 1. Update the contents in the `ci` branch to get the test to pass. You need to look at the logs to see what caused the test to fail.
 1. **Commit changes**.
 1. Wait about 20 seconds and then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.
+
+Like the upload action to send artifacts to the storage, you can use the download action to download these previously uploaded artifacts from the `build` job: [`actions/download-artifact`](https://github.com/actions/download-artifact). For brevity, we'll skip that step for this course.
 
 <footer>
 
