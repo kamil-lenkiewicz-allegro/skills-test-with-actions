@@ -13,7 +13,8 @@ _Create workflows that enable you to use Continuous Integration (CI) for your pr
 
 </header>
 
-  <<< Author notes: Step 2 >>>
+<!--
+  <<< Author notes: Step 4 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
@@ -25,31 +26,25 @@ Adding that file to this branch is enough for GitHub Actions to begin running CI
 
 Test.
 
-When a GitHub Actions workflow is running, you should see some checks in progress, like the screenshot below.
+## Step 4: Add branch protections
 
-<img alt="checks in progress in a merge box" src=https://user-images.githubusercontent.com/16547949/66080348-ecc5f580-e533-11e9-909e-c213b08790eb.png width=400 />
+_Great job uploading test reports! :partying_face:_
 
-You can follow along as GitHub Actions runs your job by going to the **Actions** tab or by clicking "Details" in the merge box below.
+Take a look at the merge box, you'll notice you can merge this even though the review process hasn't been met.
 
-When the tests finish, you'll see a red X :x: or a green check mark :heavy_check_mark: in the merge box. At that point, you can access the logs for the build job and its associated steps.
+Protected branches ensure that collaborators on your repository cannot make irrevocable changes to branches. Enabling protected branches also allows you to enable other optional checks and requirements, like required status checks and required reviews.
 
-_By looking at the logs, can you identify which tests failed?_ To find it, go to one of the failed builds and scroll through the log. Look for a section that lists all the unit tests. We're looking for the name of the test with an "x".
+### :keyboard: Activity: Add branch protections
 
-<img alt="screenshot of a sample build log with the names of the tests blurred out" src=https://user-images.githubusercontent.com/16547949/65922013-e740a200-e3b1-11e9-8151-faf52c30201e.png width=400 />
-
-If the checks don't appear or if the checks are stuck in progress, there's a few things you can do to try and trigger them:
-
-- Refresh the page, it's possible the workflow ran and the page just hasn't been updated with that change.
-- Try making a commit on this branch. Our workflow is triggered with a `push` event, and committing to this branch will result in a new `push`.
-- Edit the workflow file on GitHub and ensure there are no red lines indicating a syntax problem.
-
-### :keyboard: Activity: Fix the test
-
-1. Update the contents in the `ci` branch to get the test to pass. You need to look at the logs to see what caused the test to fail.
-1. **Commit changes**.
-1. Wait about 20 seconds and then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.
-
-Like the upload action to send artifacts to the storage, you can use the download action to download these previously uploaded artifacts from the `build` job: [`actions/download-artifact`](https://github.com/actions/download-artifact). For brevity, we'll skip that step for this course.
+1. Go to **Branches** settings. You can navigate to that page manually by selecting the right-most tab in the top of the repository called **Settings** and then clicking **Branches**.
+1. Click **Add classic branch protection rule** under "Branch protection rules".
+1. Type `main` in **Branch name pattern**.
+1. Check **Require a pull request before merging**.
+1. Uncheck **Require approvals**.
+1. Check **Require status checks to pass before merging**.
+1. Check all build and test jobs that you'd like to see in the newly visible gray box.
+1. Click **Create**.
+1. _Once you turn on branch protection, Actions can no longer push directly to the `main` branch. Wait about 20 seconds and then go to the `ci` branch. [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step on the `ci` branch. You'll need to follow instructions on this branch._
 
 <footer>
 
